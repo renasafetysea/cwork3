@@ -1,23 +1,18 @@
-package com.skypro.cwork3;
+package com.skypro.cwork3.service;
 
 import com.skypro.cwork3.model.Question;
-import com.skypro.cwork3.service.BadRequestException;
-import com.skypro.cwork3.service.ExaminerServiceImpl;
-import com.skypro.cwork3.service.JavaQuestionService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Collection;
 import java.util.HashSet;
 
 import static org.mockito.Mockito.mock;
 
-@SpringBootTest
-class Cwork3ApplicationTests {
+public class ExaminerServiceImplTest {
     private final JavaQuestionService questionServiceMock = mock(JavaQuestionService.class);
 
     @InjectMocks
@@ -60,5 +55,4 @@ class Cwork3ApplicationTests {
     public void shouldReturnSameHashSetTest() {
         Assertions.assertEquals(questionsMock, examinerService.getQuestions(questionsMock.size()));
     }
-
 }
